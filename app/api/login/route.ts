@@ -1,6 +1,6 @@
 import { compare } from "bcryptjs";
 import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
 type LoginBody = {
   username: string;
@@ -9,6 +9,7 @@ type LoginBody = {
 
 export async function POST(request: Request) {
   try {
+    const supabaseAdmin = getSupabaseAdmin();
     const body = (await request.json()) as LoginBody;
     const username = body.username?.trim();
     const password = body.password?.trim();
@@ -64,6 +65,18 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error("Login route error:", error);
+
+    if (error instanceof Error && error.message.includes("Missing")) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Server configuration is incomplete. Add the required Supabase environment variables.",
+        },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json(
       { success: false, message: "Invalid request payload." },
       { status: 400 },
