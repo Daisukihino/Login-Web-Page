@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ITE 308 Login System",
-  description: "Exam output login system built with Next.js and Supabase.",
+  title: "Login System",
+  description: "Academic login system built with Next.js and Supabase.",
 };
 
 type RootLayoutProps = {

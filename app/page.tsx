@@ -8,9 +8,6 @@ export default function HomePage() {
           <section className="relative hidden overflow-hidden bg-slate-950 px-10 py-12 text-white lg:flex lg:flex-col lg:justify-between">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.25),_transparent_35%),radial-gradient(circle_at_bottom,_rgba(56,189,248,0.25),_transparent_30%)]" />
             <div className="relative z-10 max-w-md space-y-6">
-              <span className="inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-medium tracking-wide text-teal-100">
-                ITE 308 Exam Output
-              </span>
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-tight">
                   Secure academic login system with a polished modern interface.

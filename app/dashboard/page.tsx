@@ -1,3 +1,5 @@
+import { LogoutButton } from "@/components/logout-button";
+
 const highlights = [
   {
     label: "Project Status",
@@ -35,9 +37,12 @@ export default function DashboardPage() {
               <div className="absolute -left-10 top-0 h-40 w-40 rounded-full bg-teal-400/20 blur-3xl" />
               <div className="absolute bottom-0 right-10 h-32 w-32 rounded-full bg-sky-400/20 blur-3xl" />
               <div className="relative space-y-5">
-                <span className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1 text-sm font-medium text-emerald-200">
-                  Login Successful
-                </span>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1 text-sm font-medium text-emerald-200">
+                    Login Successful
+                  </span>
+                  <LogoutButton />
+                </div>
                 <div className="space-y-3">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-teal-200">
                     Dashboard Overview
